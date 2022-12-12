@@ -9,6 +9,12 @@ def congratulate_user():
     print("=============================")
 
 
+def user_lost():
+    print("=============================")
+    print("== Unfortunately, you lost ==")
+    print("=============================")
+
+
 def is_game_over():
     return guessed == WORDS_TO_WIN or errors == ERRORS_TO_LOSE
 
@@ -63,4 +69,7 @@ while not is_game_over():
         print(f"That's right! {WORDS_TO_WIN - guessed} to go")
     else:
         errors += 1
+        if errors == ERRORS_TO_LOSE:
+            user_lost()
+            exit()
         print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")

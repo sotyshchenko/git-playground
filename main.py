@@ -25,6 +25,13 @@ def guess_is_valid(candidate):
     return True
 
 
+def guess_is_new(candidate, previous_guesses):
+    if candidate in previous_guesses:
+        return False
+    else:
+        return True
+
+
 guessed = 0
 errors = 0
 
